@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        // exercise 1a
+        const button = <button>Good Job</button>;
+
+        // exercise 1b
+        const paragraph = <p>my name is HIM</p>;
+
+        // exercise 1c
+        const div = (
+            <div>
+                <p>Cotton socks</p>
+                
+                <p>Price: $10</p>
+        
+                <button>Add to Cart</button>
+            </div>
+        );
+
+        // exercise 1d
+        const productCost = 10 + 8 + 8;
+        const shippingCost = 5;
+
+        console.log(productCost);
+
+        // exercise 1e
+
+        const product = <p> Product Cost: ${productCost}</p>
+
+        //exercise 1f
+
+        const total = (
+            <div>
+                <p> Product Cost: ${productCost}</p>
+                <p> Product Cost: ${shippingCost}</p>
+                <p> Product Cost: ${shippingCost + productCost}</p>
+
+                <button>Add to Cart</button>
+
+            </div>
+        );
+
+      //exercise 1g
+        const day = dayjs().format( 'MMMM D YYYY');
+        console.log(day);
+
+      //exercise 1h
+      const dayDisplay = <p> Today is {day}</p>
+
+      // exercise 1i
+       const cTime = dayjs().format( 'HH:mm:ss');
+
+       const timeDisplay = <p> current time is {cTime} </p>
+
+      
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(timeDisplay);
+    </script>
+  </body>
+</html>
+
+<!-- lessons learnt in lesson 1
+learnt that react is an external library used to make creation of websites easier
+
+react makes use of jsx which is an enhanced version of javascript which allows us to write html into our js files directly and it makes use of babel.
+
+learnt how to set up a react project -->

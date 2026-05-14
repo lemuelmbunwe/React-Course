@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        const cTime = dayjs().format( 'HH:mm:ss');
+        const timeDisplay = <p> current time is {cTime} </p>
+
+        
+
+        const container = document.querySelector('.js-container');
+        const root = ReactDOM.createRoot(container);
+        root.render(timeDisplay);
+
+        setInterval(() =>{
+            const clock = <p> Current time is {dayjs().format( 'HH:mm:ss' )} </p>;
+            root.render(clock);
+        }, 1000);
+      
+    </script>
+  </body>
+</html>

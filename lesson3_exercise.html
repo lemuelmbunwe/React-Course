@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>lesson3 -- gh</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+        function MsgInput({inputValue , setInputValue}) {
+            function saveInput(event){
+                setInputValue(event.target.value);
+            }
+            function clearText(){
+                setInputValue('');
+            }
+            function exampleText(){
+                setInputValue('Alice');
+            }
+
+
+            return(
+                <>
+                <input 
+                onChange={saveInput}
+                value={inputValue}
+                />
+                <button
+                onClick={clearText}
+                >Reset</button>
+                <button
+                onClick={exampleText}
+                >Example</button>
+                </>
+            );
+        }
+
+        function MsgDisplay({inputValue}) {
+            // function textDisplay (){
+                
+            // }
+            return (
+                <p>Yo! {inputValue} </p>
+            );
+        }
+
+         function App(){
+            const [inputValue, setInputValue]=React.useState('')
+            return(
+                <>
+                <MsgInput 
+                inputValue={inputValue}
+                setInputValue={setInputValue}
+                />
+                <MsgDisplay 
+                inputValue={inputValue}
+                />
+                </>
+            );
+         }
+    
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+      
+    </script>
+  </body>
+</html>
