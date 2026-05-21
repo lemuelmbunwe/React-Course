@@ -1,0 +1,7 @@
+.text {
+  color: #ff0000; /* Changes text to bright red so you can see it */
+  text-align: center;
+  margin-top: 100px; /* Pushes it down below the header */
+  font-size: 32px;
+  font-family: sans-serif;
+}
