@@ -92,7 +92,7 @@
           setInputText(event.target.value); 
         }
 
-        async function sendMessage() {
+        async function sendMessage() { //this block takes the user message and saves it to the newChatMessages variable. this is so because, the setChatMessage does not actually save until the block has been completed. if this is not saved in the newChatMessages only the second block which updates the state will be visible. user change will not be saved.
           const newChatMessages = [
               ...chatMessages,
             {
@@ -102,13 +102,13 @@
             }
           ]
 
-          setChatMessages(newChatMessages);
+          setChatMessages(newChatMessages);//updates user state at this point and the second call will later update when the second set has executed
 
           const response = await Chatbot.getResponseAsync(inputText);
           
           //display response for chatbot
-          setChatMessages([
-              ...newChatMessages,
+          setChatMessages([ //the state updater function that updates with the response from the chatbot API. 
+              ...newChatMessages, //loads the all the other data using the spread operator(...)
             {
               message: response,
               sender: 'robot',
@@ -117,7 +117,7 @@
           ]);
 
 
-          setInputText('');
+          setInputText(''); //to set the input field to empty after the response has been generated
         }
 
         function enter(event) {
