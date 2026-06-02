@@ -1,6 +1,6 @@
 import axios  from 'axios';
-import { CheckoutPage } from "./pages/CheckoutPage";
-import { HomePage } from "./pages/HomePage";
+import { CheckoutPage } from "./pages/checkout/CheckoutPage";
+import { HomePage } from "./pages/home/HomePage";
 import { OrdersPage } from "./pages/OrdersPage";
 import { TrackingPage } from "./pages/TrackingPage";
 import { ErrorPage } from "./pages/ErrorPage";
